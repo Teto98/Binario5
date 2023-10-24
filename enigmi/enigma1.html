@@ -45,19 +45,39 @@
             display: block;
             margin: 0 auto;
         }
+        #rispostaInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin: 10px;
+        }
+        #verificaButton {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #verificaButton:hover {
+            background-color: #1e87d4;
+        }
     </style>
 </head>
 <body>
     <h1>Enigma 1</h1>
-    <div><p>Quindici persone sono intrappolate a bordo di una nave che affonderà in 20 minuti esatti.</p>
+    <div>
+        <p>Quindici persone sono intrappolate a bordo di una nave che affonderà in 20 minuti esatti.</p>
         <p>L’unica ancora di salvezza è la scialuppa di salvataggio a cinque posti presente a bordo.</p>
         <p>Impossibile salvarsi a nuoto a causa degli squali in mare.</p>
         <p>Un viaggio di andata e ritorno verso l’isola più vicina a bordo della scialuppa dura 9 minuti.</p>
         <p>Quante persone riusciranno a salvarsi?</p>
     </div>
-    
 
-    <input type="text" id="rispostaInput">
+    <input type="text" id="rispostaInput" placeholder="Inserisci la risposta">
     <button id="verificaButton">Verifica</button>
 
     <p id="rispostaMessage"></p>
