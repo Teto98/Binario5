@@ -57,13 +57,26 @@
     </div>
     
 
-   <div><p>Puoi visitare i seguenti siti web per la risposta:</p>
-   </div> 
-    <ul>
-        <li><a href="https://www.facebook.com/groups/3775997499287742/?ref=share">Binario 5 Facebook</a></li>
-        <li><a href="https://instagram.com/binario__5?igshid=MzRlODBiNWFlZA==">Binario__5 Instagram</a></li>
-    </ul>
+    <input type="text" id="rispostaInput">
+    <button id="verificaButton">Verifica</button>
+
+    <p id="rispostaMessage"></p>
 
     <img src="binario5.jpeg" alt="Binario 5" width="300">
+    <script>
+        document.getElementById("verificaButton").addEventListener("click", function() {
+            // Ottieni il valore inserito dall'utente
+            var utenteRisposta = document.getElementById("rispostaInput").value;
+
+            // Confronta la risposta dell'utente con la risposta corretta
+            var rispostaCorretta = "12";
+
+            if (utenteRisposta === rispostaCorretta) {
+                document.getElementById("rispostaMessage").textContent = "Risposta corretta!";
+            } else {
+                document.getElementById("rispostaMessage").textContent = "Risposta sbagliata. Riprova.";
+            }
+        });
+    </script>
 </body>
 </html>
