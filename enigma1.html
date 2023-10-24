@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Binario Cinque</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        div {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #1e87d4;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        #rispostaInput {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin: 10px;
+        }
+        #verificaButton {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #verificaButton:hover {
+            background-color: #1e87d4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enigma 1</h1>
+    <div>
+        <p>Quindici persone sono intrappolate a bordo di una nave che affonderà in 20 minuti esatti.</p>
+        <p>L’unica ancora di salvezza è la scialuppa di salvataggio a cinque posti presente a bordo.</p>
+        <p>Impossibile salvarsi a nuoto a causa degli squali in mare.</p>
+        <p>Un viaggio di andata e ritorno verso l’isola più vicina a bordo della scialuppa dura 9 minuti.</p>
+        <p>Quante persone riusciranno a salvarsi?</p>
+    </div>
+
+   
+    <input type="text" id="rispostaInput" placeholder="Inserisci la risposta">
+    <button id="verificaButton">Verifica</button>
+
+    <div id="rispostaMessage"></div>
+
+    <img src="binario5.jpeg" alt="Binario 5" width="300">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.3.0/crypto-js.js"></script>
+    <script>
+        document.getElementById("verificaButton").addEventListener("click", function() {
+            // Ottieni il valore inserito dall'utente
+            var utenteRisposta = document.getElementById("rispostaInput").value;
+    
+            // Calcola l'hash della risposta dell'utente
+            var utenteRispostaHash = CryptoJS.SHA256(utenteRisposta).toString();
+    
+            // Calcola l'hash della risposta corretta
+            //var rispostaCorretta = "12";
+            //var rispostaCorrettaHash = CryptoJS.SHA256(rispostaCorretta).toString();
+    
+            // Confronta gli hash delle risposte
+            if (utenteRispostaHash === '3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278') {
+                document.getElementById("rispostaMessage").textContent = "Risposta corretta!";
+            } else {
+                document.getElementById("rispostaMessage").textContent = "Risposta sbagliata. Riprova.";
+            }
+        });
+    </script>
+   
+</body>
+</html>
