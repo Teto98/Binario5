@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Esempio HTML con JavaScript</title>
+</head>
+<body>
+    <h1>Benvenuti!</h1>
+    <p>Fare clic sul pulsante per visualizzare un messaggio.</p>
+
+    <button id="mostraMessaggio">Mostra Messaggio</button>
+
+    <p id="messaggioNascosto" style="display: none;">Questo è il messaggio nascosto!</p>
+
+    <script>
+        // JavaScript viene eseguito qui
+        document.getElementById("mostraMessaggio").addEventListener("click", function() {
+            // Quando il pulsante viene cliccato, questo codice verrà eseguito
+            var messaggio = document.getElementById("messaggioNascosto");
+            messaggio.style.display = "block"; // Mostra il messaggio
+        });
+    </script>
+</body>
+</html>
