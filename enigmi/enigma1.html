@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binario Cinque</title>
     <style>
         body {
@@ -14,6 +16,7 @@
             color: #fff;
             padding: 10px;
             text-align: center;
+            margin: 0;
         }
         div {
             margin: 10px;
@@ -44,6 +47,7 @@
         img {
             display: block;
             margin: 0 auto;
+            max-width: 100%;
         }
         #rispostaInput {
             width: 100%;
@@ -51,7 +55,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-top: 10px;
-            margin: 10px;
         }
         #verificaButton {
             background-color: #3498db;
@@ -60,10 +63,14 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 10px;
+            margin-top: 10px;
         }
         #verificaButton:hover {
             background-color: #1e87d4;
+        }
+        #rispostaMessage {
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -77,25 +84,16 @@
         <p>Quante persone riusciranno a salvarsi?</p>
     </div>
 
-   
     <input type="text" id="rispostaInput" placeholder="Inserisci la risposta">
     <button id="verificaButton">Verifica</button>
-
     <div id="rispostaMessage"></div>
-
-    <img src="binario5.jpeg" alt="Binario 5" width="300">
+    <img src="binario5.jpeg" alt="Binario 5">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.3.0/crypto-js.js"></script>
     <script>
         document.getElementById("verificaButton").addEventListener("click", function() {
-            // Ottieni il valore inserito dall'utente
             var utenteRisposta = document.getElementById("rispostaInput").value;
-    
-            // Calcola l'hash della risposta dell'utente
             var utenteRispostaHash = CryptoJS.SHA256(utenteRisposta).toString();
     
-           
-    
-            // Confronta gli hash delle risposte
             if (utenteRispostaHash === '3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278') {
                 document.getElementById("rispostaMessage").textContent = "Risposta corretta!";
             } else {
@@ -103,6 +101,7 @@
             }
         });
     </script>
-   
 </body>
 </html>
+
+
