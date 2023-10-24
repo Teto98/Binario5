@@ -77,26 +77,34 @@
         <p>Quante persone riusciranno a salvarsi?</p>
     </div>
 
+   
     <input type="text" id="rispostaInput" placeholder="Inserisci la risposta">
     <button id="verificaButton">Verifica</button>
 
-    <p id="rispostaMessage"></p>
+    <div id="rispostaMessage"></div>
 
     <img src="binario5.jpeg" alt="Binario 5" width="300">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.3.0/crypto-js.js"></script>
     <script>
         document.getElementById("verificaButton").addEventListener("click", function() {
             // Ottieni il valore inserito dall'utente
             var utenteRisposta = document.getElementById("rispostaInput").value;
-
-            // Confronta la risposta dell'utente con la risposta corretta
-            var rispostaCorretta = "12";
-
-            if (utenteRisposta === rispostaCorretta) {
+    
+            // Calcola l'hash della risposta dell'utente
+            var utenteRispostaHash = CryptoJS.SHA256(utenteRisposta).toString();
+    
+            // Calcola l'hash della risposta corretta
+            //var rispostaCorretta = "12";
+            //var rispostaCorrettaHash = CryptoJS.SHA256(rispostaCorretta).toString();
+    
+            // Confronta gli hash delle risposte
+            if (utenteRispostaHash === '3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278') {
                 document.getElementById("rispostaMessage").textContent = "Risposta corretta!";
             } else {
                 document.getElementById("rispostaMessage").textContent = "Risposta sbagliata. Riprova.";
             }
         });
     </script>
+   
 </body>
 </html>
